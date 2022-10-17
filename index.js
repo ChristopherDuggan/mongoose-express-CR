@@ -35,6 +35,13 @@ app.post('/list', (req, res) => {
 })
 
 
+app.post('/list/:id/item', (req, res) => {
+  List.findByIdAndUpdate(
+    req.params.id,
+    { $push: { items: req.body } },
+    { new: true }
+  ).then(list => res.json(list))
+})
 
 
 
