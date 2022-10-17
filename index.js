@@ -18,7 +18,7 @@ app.get('/list', (req, res) => {
 })
 
 app.get('/list/:id', (req, res) => {
-  List.findById(req.params.id)
+    List.findById(req.params.id)
         .then(list => res.json(list))
 })
 
@@ -29,21 +29,30 @@ app.get('/list/name/:name', (req, res) => {
 })
 
 app.post('/list', (req, res) => {
-  List.create(req.body).then(list => {
-    res.json(list)
-  })
+    List.create(req.body).then(list => {
+        res.json(list)
+    })
 })
 
 
 app.post('/list/:id/item', (req, res) => {
-  List.findByIdAndUpdate(
-    req.params.id,
-    { $push: { items: req.body } },
-    { new: true }
-  ).then(list => res.json(list))
+    List.findByIdAndUpdate(
+        req.params.id,
+        { $push: { items: req.body } },
+        { new: true }
+    ).then(list => res.json(list))
 })
 
 
+app.put("/list/:id", function (req, res) {
+    List.findOneAndUpdate(
+        { _id: req.params.id },
+        req.body,
+        { new: true }
+    ).then(list => {
+        res.json(list)
+    })
+})
 
 
 
