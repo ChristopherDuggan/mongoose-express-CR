@@ -3,7 +3,7 @@ import connection from './connection.js'
 import List from './models/List.js'
 
 const listData = [{
-    name: "Chris' Todo List",
+    name: "Chris' Todo List,
     items: [
         {
             title: "test db"
@@ -12,7 +12,7 @@ const listData = [{
         },
         {
             title: "Go to bed",
-            status: "incomplete"
+            status: "incomplete",
             deadline: "a while ago"
         }
     ]
