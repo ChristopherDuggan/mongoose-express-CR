@@ -6,7 +6,7 @@ const listData = [{
     name: "Chris' Todo List",
     items: [
         {
-            title: "test db"
+            title: "test db",
             status: "complete",
             deadline: "tonight"
         },
